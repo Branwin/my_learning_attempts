@@ -9,7 +9,15 @@
 
 
 
-# Flutter repo-specific
+# Android / Gradle
+/build/
+/.gradle/
+/app/build/
+/local.properties
+*.iml
+.idea/
+
+# Flutter repo-specific (kept for old branches)
 /bin/cache/
 /bin/internal/bootstrap.bat
 /bin/internal/bootstrap.sh
