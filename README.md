@@ -22,10 +22,11 @@
 
    ```bash
    flutter doctor
+   flutter create --platforms=android .
    flutter pub get
    ```
 
-   根据 `flutter doctor` 的提示安装 Android SDK、Android SDK Command-line Tools，并在 Android Studio 的 SDK Manager 中确认至少有一个 Android SDK Platform。
+   `flutter create` 会根据当前 Flutter SDK 生成 Android 宿主目录。根据 `flutter doctor` 的提示安装 Android SDK、Android SDK Command-line Tools，并在 Android Studio 的 SDK Manager 中确认至少有一个 Android SDK Platform。
 4. 用 Android Studio 的 Device Manager 创建或启动一个 Android 模拟器；也可以连接已打开 USB 调试的实体设备。
 5. 执行：
 
@@ -41,7 +42,7 @@
    flutter test
    ```
 
-如果 Android Studio 询问是否生成 Android 平台目录，选择使用当前 Flutter 项目生成即可；生成后不要提交 `android/local.properties`、签名文件或本机 SDK 路径。
+生成 Android 平台目录后，不要提交 `android/local.properties`、签名文件或本机 SDK 路径；这些文件已经在 `.gitignore` 中排除。
 
 ## 后续阶段建议
 
