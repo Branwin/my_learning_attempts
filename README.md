@@ -1,12 +1,12 @@
 # 学习助手
 
-学习辅助知识点收藏 App，首版目标平台为 Android，使用 Flutter 构建。
+学习辅助知识点收藏 App，首版目标平台为 Android，使用 Kotlin + Jetpack Compose 构建。
 
 ## 第一阶段：工程骨架
 
 当前阶段完成了：
 
-- Flutter 应用入口与 Material 3 主题；
+- 原生 Android Kotlin 应用入口与 Material 3 Compose UI；
 - 首页、课程、收藏、我的四个主导航页面；
 - 首页搜索框、每日推荐、今日计划的静态交互入口；
 - 课程导入、集合管理、个人设置的占位入口；
@@ -16,33 +16,12 @@
 
 ## 在 Android Studio 中运行
 
-1. 安装 Flutter SDK，并把 Flutter SDK 的 `bin` 目录加入系统 PATH。Android Studio 本身不是 Flutter SDK，首次运行前还需要在 Android Studio 的 Plugins 中安装 **Flutter** 插件（它会同时安装 Dart 插件）。
-2. 在 Android Studio 中打开本仓库根目录，不要只打开 `android` 子目录。
-3. 打开 Terminal，在仓库根目录执行：
-
-   ```bash
-   flutter doctor
-   flutter create --platforms=android .
-   flutter pub get
-   ```
-
-   `flutter create` 会根据当前 Flutter SDK 生成 Android 宿主目录。根据 `flutter doctor` 的提示安装 Android SDK、Android SDK Command-line Tools，并在 Android Studio 的 SDK Manager 中确认至少有一个 Android SDK Platform。
+1. 安装 Android Studio，并在 SDK Manager 中确认安装 Android SDK Platform、Platform-Tools、Build-Tools 和 Command-line Tools。
+2. 在 Android Studio 中打开本仓库根目录，不要只打开 `app` 子目录。
+3. 等待 Gradle Sync 完成。如果 Android Studio 提示选择 Gradle JDK，选择 **Embedded JDK 17**。
 4. 用 Android Studio 的 Device Manager 创建或启动一个 Android 模拟器；也可以连接已打开 USB 调试的实体设备。
-5. 执行：
-
-   ```bash
-   flutter devices
-   flutter run
-   ```
-
-   或在 Android Studio 顶部设备选择器选中设备后点击 Run。
-6. 运行测试：
-
-   ```bash
-   flutter test
-   ```
-
-生成 Android 平台目录后，不要提交 `android/local.properties`、签名文件或本机 SDK 路径；这些文件已经在 `.gitignore` 中排除。
+5. 在 Android Studio 顶部设备选择器选中设备，点击 Run。首次打开项目时 Android Studio 会自动使用项目的 Gradle 配置下载依赖。
+6. 生成的 `local.properties`、签名文件或本机 SDK 路径不要提交。
 
 ## 后续阶段建议
 
